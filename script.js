@@ -14,15 +14,16 @@ function startGame() {
 function updateContent(newContent) {
     document.getElementById("content").innerHTML = newContent;
     contentWords = newContent.trim().split(" "); // Store words in content
-}
 
-document.getElementById("user-input").addEventListener("input", function() {
-    var userInput = document.getElementById("user-input").value.trim();
-    var userInputWords = userInput.split(" ");
-    if (userInput === contentWords.join(" ")) {
-        displayResults(); // Display results if user completes typing before time
-    }
-});
+    // Add event listener after content update
+    document.getElementById("user-input").addEventListener("input", function() {
+        var userInput = document.getElementById("user-input").value.trim();
+        var userInputWords = userInput.split(" ");
+        if (userInput === contentWords.join(" ")) {
+            displayResults(); // Display results if user completes typing before time
+        }
+    });
+}
 
 setTimeout(function() {
     document.getElementById("user-input").disabled = true;
