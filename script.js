@@ -52,7 +52,7 @@ function calculateAccuracy(userInputWords, contentWords) {
     var correctWords = 0;
     for (var i = 0; i < userInputWords.length; i++) {
         if (userInputWords[i] === contentWords[i]) {
-            correctWords++;
+            correctWords++ ;
         }
     }
     return (correctWords / contentWords.length) * 100;
